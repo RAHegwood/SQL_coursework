@@ -1,0 +1,23 @@
+/**Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in. You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. You should sell at least 15 items, 
+and use select statements to order your items by price and show at least one statistic about the items.**/
+
+CREATE TABLE bike_station (id INTEGER, item TEXT, category TEXT, price integer, sale_unit INTEGER);
+
+INSERT INTO bike_station VALUES (1, "gloves", "accessory", 20, 10);
+INSERT INTO bike_station VALUES (2, "mens helmet", "accesory", 65, 7);
+INSERT INTO bike_station VALUES (3, "womens helmet", "acessory", 65, 12);
+INSERT INTO bike_station VALUES (4, "kids helmet", "accesory", 35, 20);
+INSERT INTO bike_station VALUES (5, "fingerless gloves", "acessory", 20, 6);
+INSERT INTO bike_station VALUES (6, "sunglasses", "accesory", 60, 12);
+INSERT INTO bike_station VALUES (7, "rain jacket mens", "apparel", 100, 12);
+INSERT INTO bike_station VALUES (8, "rain jacket womens", "apparel", 100, 10);
+INSERT INTO bike_station VALUES (9, "rain jacket kids", "apparel", 50, 20);
+INSERT INTO bike_station VALUES (10, "kickstand", "parts", 15, 30);
+INSERT INTO bike_station VALUES (11, "road bike mens", "bike", 600, 27);
+INSERT INTO bike_station VALUES (12, "road bike womens", "bike", 600, 22);
+INSERT INTO bike_station VALUES (13, "kids bike boys", "bike", 250, 40);
+INSERT INTO bike_station VALUES (14, "kids bike girls", "bike", 250, 30);
+INSERT INTO bike_station VALUES (15, "scooter", "bike", 100, 30);
+
+SELECT * FROM bike_station ORDER BY price DESC;
+SELECT category, SUM(price * sale_unit) FROM bike_station GROUP BY category;
