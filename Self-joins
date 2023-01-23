@@ -1,0 +1,23 @@
+/*https://www.khanacademy.org/computing/computer-programming/sql/relational-queries-in-sql/pt/joining-tables-to-themselves-with-self-joins*/
+.com", "555-6666", "2002-06-24", 2);
+INSERT INTO students 
+    VALUES (2, "Alice", "Wonderland", "alice@wonderland.com", "555-4444", "2002-07-04", 1);
+INSERT INTO students 
+    VALUES (3, "Aladdin", "Lampland", "aladdin@lampland.com", "555-3333", "2001-05-10", 4);
+INSERT INTO students 
+    VALUES (4, "Simba", "Kingston", "simba@kingston.com", "555-1111", "2001-12-24", 3);
+    
+SELECT id, first_name, last_name, buddy_id FROM students;
+
+/* self join */
+SELECT students.first_name, students.last_name, buddies.email as buddy_email
+    FROM students
+    JOIN students buddies
+    ON students.buddy_id = buddies.id;
+    
+    
+Challenge: 
+SELECT movies.title, sequel.title AS Sequel
+FROM movies
+LEFT OUTER JOIN movies sequel
+ON movies.sequel_id = sequel.id;
