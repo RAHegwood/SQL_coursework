@@ -1,3 +1,12 @@
+/*Project query*/
+
+SELECT a.first_name, a.last_name, b.first_name wants, b.last_name FROM wants_to_work_with 
+JOIN famous_people a 
+ON wants_to_work_with.person1_id = a.id 
+JOIN famous_people b 
+ON wants_to_work_with.person2_id = b.id;
+
+
 /*This excercise combines a join and a self join in order to get info from the same table column multiple times*/
 
 CREATE TABLE students (id INTEGER PRIMARY KEY,
