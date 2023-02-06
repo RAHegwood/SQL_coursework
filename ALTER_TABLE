@@ -22,3 +22,6 @@ SELECT * FROM clothes;
 
 INSERT INTO clothes (type, design, price) VALUES ("hat", "white logo", 25);
 SELECT * FROM clothes;
+
+    
+ALTER TABLE diary_logs ADD emotion TEXT default "unknown";
